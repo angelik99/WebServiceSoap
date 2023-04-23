@@ -1,0 +1,128 @@
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Angelica/webservice/apiusers"
+                    elementFormDefault="qualified">
+            <xsd:element name="CreateUserRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" name="name">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[a-zA-Z0-9]*"/>
+                                    <xsd:minLength value="1"/>
+                                    <xsd:maxLength value="100"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element minOccurs="1" name="typeDocument">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[a-zA-Z0-9]*"/>
+                                    <xsd:minLength value="2"/>
+                                    <xsd:maxLength value="2"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="numDocument">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:int">
+                                    <xsd:pattern value="[0-9]*"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+			  <xsd:element name="CreateUserResponse" >
+                <xsd:complexType>
+                    <xsd:sequence>                     
+                        <xsd:element name="code" type="xsd:int"/>
+                        <xsd:element name="message"  type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ConsultUserRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" name="typeDocument">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[a-zA-Z0-9]*"/>
+                                    <xsd:minLength value="2"/>
+                                    <xsd:maxLength value="2"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element minOccurs="1" name="numDocument">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:int">
+                                    <xsd:pattern value="[0-9]*"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element> 
+              <xsd:element name="ConsultUserResponse" >
+                <xsd:complexType>
+                    <xsd:sequence>                     
+                        <xsd:element name="code" type="xsd:int"/>
+                        <xsd:element name="message" type="xsd:string"/>
+                         <xsd:element name="name" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        <xsd:element name="deleteUserRequest">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element  name="numDocument" type="xsd:int"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="deleteUserResponse">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="code" type="xsd:int"/>
+                    <xsd:element name="message" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+
+        <xsd:element name="updateUserRequest">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element minOccurs="1" name="name">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:pattern value="[a-zA-Z0-9]*"/>
+                                <xsd:minLength value="1"/>
+                                <xsd:maxLength value="100"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element minOccurs="1" name="typeDocument">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:pattern value="[a-zA-Z0-9]*"/>
+                                <xsd:minLength value="2"/>
+                                <xsd:maxLength value="2"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element minOccurs="1" maxOccurs="1" name="numDocument">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:int">
+                                <xsd:pattern value="[0-9]*"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="updateUserResponse">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="code" type="xsd:int"/>
+                    <xsd:element name="message" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+        </xsd:schema>
